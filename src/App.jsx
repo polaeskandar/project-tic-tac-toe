@@ -4,8 +4,8 @@ const App = () => {
   return <main>
     <div id="game-container">
       <ol id="players">
-        <Player name="MAX" symbol="X" />
-        <Player name="MANUEL" symbol="O" />
+        <Player initialName="MAX" symbol="X" />
+        <Player initialName="MANUEL" symbol="O" />
       </ol>
 
       GAME BOARD

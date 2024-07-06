@@ -1,14 +1,19 @@
 import {useState} from "react";
 
-const Player = ({name, symbol}) => {
+const Player = ({initialName, symbol}) => {
   const [isEditing, setIsEditing] = useState(false);
+  const [name, setName] = useState(initialName);
 
   const handleEditClick = () => {
-    setIsEditing(!isEditing);
+    setIsEditing(editing => !editing);
+  }
+
+  const handleChangePLayerName = (e) => {
+    setName(e.target.value)
   }
 
   const playerName = isEditing
-    ? <input type="text" required value={name} />
+    ? <input type="text" required defaultValue={name} onChange={handleChangePLayerName} />
     : <span className="player-name">{name}</span>
 
   return <li>
